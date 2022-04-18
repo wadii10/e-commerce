@@ -1,0 +1,9 @@
+.signUp_Form {
+  display: grid;
+  place-items: center;
+  padding: 0.5rem;
+  /* border-radius: 12px; */
+  /* border: solid; */
+  /* width: 20rem; */
+  /* background-color: white; */
+}
