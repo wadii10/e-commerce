@@ -7,6 +7,8 @@ import AddProduct from './components/AddProduct';
 import SignUp from './components/SignUP/SignUp';
 import Login from './components/Login/Login';
 import Profile from './components/Profile/Profile';
+import CartList from './components/Carts/CartList';
+import CartScreen from './components/Carts/CartScreen';
 // import ListMenProd from './components/Men/ListMenProd';
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/cart/:_id" element={<CartScreen />} /> 
           {/* <Route path='/updateProduct/:_id' element={<UpdateProduct />} /> */}
         </Routes>
       </Router>

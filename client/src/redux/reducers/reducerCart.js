@@ -32,3 +32,5 @@ export const cartReducer = (state = init, {type, payload}) => {
       return state;
   }
 };
+
+export default cartReducer;
