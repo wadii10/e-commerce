@@ -13,13 +13,13 @@ const Dashboard = () => {
     }, [dispatch]);
 
     return (
-        <div>
+        <div className='header'>
 
             <Navbar bg="light" variant="light" expand={false}>
 
                 <Container fluid >
                     <Navbar.Toggle aria-controls="offcanvasNavbar" />
-                    <Navbar.Brand href="#">E-Sport</Navbar.Brand>
+                    <Navbar.Brand href="/">E-Sport</Navbar.Brand>
 
                     <div className="all_nave">
 
@@ -68,20 +68,21 @@ const Dashboard = () => {
                         <Offcanvas.Header closeButton>
                             <Offcanvas.Title id="offcanvasNavbarLabel">E-Sport</Offcanvas.Title>
                         </Offcanvas.Header>
+
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                 <Nav.Link href="/">Home</Nav.Link>
                                 <Nav.Link href="#action2">Men</Nav.Link>
                                 <Nav.Link href="#action3">Women</Nav.Link>
                                 <Nav.Link href="#action4">Kids</Nav.Link>
-                                <NavDropdown title="Dropdown" id="offcanvasNavbarDropdown">
+                                {/* <NavDropdown title="Dropdown" id="offcanvasNavbarDropdown">
                                     <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                                     <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item href="#action5">
                                         Something else here
                                     </NavDropdown.Item>
-                                </NavDropdown>
+                                </NavDropdown> */}
                             </Nav>
                             <Form className="d-flex">
                                 <FormControl

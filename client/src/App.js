@@ -26,7 +26,6 @@ function App() {
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/profile" element={<Profile />} />
           <Route path="/cart/:_id" element={<CartScreen />} /> 
           {/* <Route path='/updateProduct/:_id' element={<UpdateProduct />} /> */}
         </Routes>
