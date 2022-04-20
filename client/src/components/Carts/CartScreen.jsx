@@ -54,15 +54,15 @@ const CartScreen = ({ location, history }) => {
                                     <Row>
                                         <Col md={2}>
                                             <Image
-                                                src={item.avatar}
-                                                alt={item.nameproduct}
+                                                src={item.image}
+                                                alt={item.nameProd}
                                                 fluid
                                                 rounded
                                             />
                                         </Col>
                                         <Col md={3}>
                                             <Link to={`/product/${item.product}`}>
-                                                {item.nameproduct}
+                                                {item.nameProd}
                                             </Link>
                                         </Col>
                                         <Col md={2}>${item.price}</Col>
@@ -103,8 +103,7 @@ const CartScreen = ({ location, history }) => {
                         <ListGroup variant="flush">
                             <ListGroup.Item>
                                 <h2>
-                                    Subtotal({cartItems.reduce((acc, item) => acc + item.qty, 0)}
-                                    )items
+                                    total : {cartItems.reduce((acc, item) => acc + item.qty, 0)}
                                 </h2>
                                 $
                                 {cartItems
