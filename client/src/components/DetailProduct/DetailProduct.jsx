@@ -1,14 +1,15 @@
+import { Card, Button, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getOneProduct } from '../../redux/actions/actionProduct';
+import "./DetailProduct.css"
 
 const DetailProduct = () => {
 
     //reducer state
-    const {products} = useSelector(state => state.productReducer);
+    const { products } = useSelector(state => state.productReducer);
     // console.log(product)
 
     // product
@@ -28,20 +29,29 @@ const DetailProduct = () => {
         // } catch (error) {
         //     alert("get one error")
         // }
-          dispatch(getOneProduct(_id));
+        dispatch(getOneProduct(_id));
     }, [_id])
 
     return (
-        <div>
-            <Card className="bg-dark text-white">
-                <Card.Img src={products.image} alt="Card image" />
-                <Card.ImgOverlay>
-                    <Card.Title>{products.nameProd}</Card.Title>
-                    <Card.Text>
+        <div className='detail'>
+            <Card >
+                <CardMedia
+                    component="img"
+                    alt="green iguana"
+                    sx={{ height: '20rem' }}
+                    image={products.image}
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {products.nameProd}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
                         {products.price}
-                    </Card.Text>
-                    <Card.Text>Last updated 3 mins ago</Card.Text>
-                </Card.ImgOverlay>
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    <Link to="/"><Button size="small">Back</Button></Link>
+                </CardActions>
             </Card>
         </div>
     )

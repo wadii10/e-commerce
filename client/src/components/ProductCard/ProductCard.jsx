@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { addToCart } from '../../redux/actions/actionCart';
 import { getAllProducts, removeProduct } from '../../redux/actions/actionProduct';
 import UpdateProd from '../UpdateProd';
 import './ProductCard.css'
@@ -17,9 +18,14 @@ const ProductCard = ({ product }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const addToCartHandler = () => {
-        navigate(`/cart/${product._id}`)
-    }
+    //state articale
+    const [article, setArticle] = useState("")
+
+    // const addToCartHandler = (e) => {
+    //     navigate(`/cart/${product._id}`);
+    //     setArticle(product);
+    //     console.log(article)
+    // }
     // useEffect(() => {
     //     dispatch(getAllProducts())
     // }, [])
@@ -41,9 +47,9 @@ const ProductCard = ({ product }) => {
                         <UpdateProd updateProd={product} />
                         <Link to={`/detailProduct/${product._id}`}> <Button variant="info">DETAIL</Button> </Link>
                     </div> : <div className="btns_user">
-                        <Button variant="primary" onClick={addToCartHandler} >BUY</Button>
+                        <Button variant="primary" onClick={()=>dispatch(addToCart(product._id,))} >BUY</Button>
                         <Link to={`/detailProduct/${product._id}`}> <Button variant="info">DETAIL</Button> </Link>
-                    </div>}
+                    </div> }
                 </Card.Body>
             </Card>
         </div>

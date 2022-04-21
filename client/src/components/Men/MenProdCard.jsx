@@ -68,9 +68,11 @@ export default function RecipeReviewCard({ man }) {
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
+        
         {/* <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton> */}
+        <i class="fa fa-info-circle"></i>
+        </IconButton>
+         */}
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}

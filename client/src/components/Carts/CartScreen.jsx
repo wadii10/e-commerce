@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
     Button,
     Card,
@@ -13,31 +13,32 @@ import { Link, useParams } from "react-router-dom";
 import { addToCart, removeFromCart } from "../../redux/actions/actionCart";
 // import Message from '../components/Message'
 
-const CartScreen = ({ location, history }) => {
-    // const productId=match.params.id
-    const { _id } = useParams();
+const CartScreen = () => {
+    
+    // const { _id } = useParams();
 
     // const qty=location.search?Number(location.search.split('=')[1]):1
     const qty = 1;
     const dispatch = useDispatch();
     const { cartItems } = useSelector((state) => state.cartReducer);
     console.log(cartItems);
-    // const {cartItems}=cart
-    useEffect(() => {
-        if (_id) {
-            dispatch(addToCart(_id, qty));
-        }
-    }, [_id]);
     
-    const removeFromCartHandler = (_id) => {
-        dispatch(removeFromCart(_id));
-    };
-    //    const checkoutHandler=()=>{
-    //     history.push('/login?redirect=shipping')
-    //    }
+    // const {cartItems}=cart
+    // useEffect(() => {
+    //     if (_id) {
+    //         dispatch(addToCart(_id, qty));
+    //     }
+    // }, [_id]);
+    
+    // const removeFromCartHandler = (_id) => {
+    //     dispatch(removeFromCart(_id));
+    // };
+    // //    const checkoutHandler=()=>{
+    // //     history.push('/login?redirect=shipping')
+    // //    }
     return (
         <>
-            <Link className="btn btn-light my-3" to="/">
+            {/* <Link className="btn btn-light my-3" to="/">
                 Go Back
             </Link>
             <Row>
@@ -123,7 +124,7 @@ const CartScreen = ({ location, history }) => {
                         </ListGroup>
                     </Card>
                 </Col>
-            </Row>
+            </Row> */}
         </>
     );
 };

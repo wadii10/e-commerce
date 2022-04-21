@@ -50,12 +50,21 @@ const Dashboard = () => {
 
                         </div>}
 
-                        <Nav>
+                       { user ?<Nav>
                             <div className='btnCartCount' >
                                 <div className='count'>0</div>
-                                <i className='fas fa-shopping-cart'></i>
+                                <Nav.Link href='/cart' >
+                                    <i className='fas fa-shopping-cart'></i>
+                                </Nav.Link>
                             </div>
-                        </Nav>
+                        </Nav> : <Nav>
+                            <div className='btnCartCount' >
+                                <div className='count'>0</div>
+                                <Nav.Link href='/login' >
+                                    <i className='fas fa-shopping-cart'></i>
+                                </Nav.Link>
+                            </div>
+                        </Nav> }
 
                     </div>
 
