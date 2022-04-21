@@ -21,6 +21,10 @@ app.use("/product", product);
 const upload = require("./routes/upload");
 app.use("/upload", upload);
 
+//router cart
+const cart = require("./routes/cart")
+app.use("/api", cart);
+
 //running server
 app.listen(PORT, err => err ?console.log(err):console.log(`server run on ${PORT}`));
 

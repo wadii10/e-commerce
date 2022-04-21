@@ -7,7 +7,7 @@ import { createProduct, getAllProducts } from '../redux/actions/actionProduct';
 
 
 function AddProduct() {
-  
+
   //state
   //nameProd
   const [nameProd, setNameProd] = useState("");
@@ -23,9 +23,8 @@ function AddProduct() {
   const [description, setDescription] = useState("nothing")
 
   //handel upload
-  const fileSelectedHandler = async(e) => {
-    //   setImage(e.target.files[0]);
-    //   await !loading
+  const fileSelectedHandler = async (e) => {
+    // setImage(e.target.files[0]);
     // console.log(image);
 
     const file = e.target.files[0]
@@ -40,9 +39,10 @@ function AddProduct() {
         },
       }
 
-      const  {data}= await axios.post('/upload/up', fd, config)
+      const { data } = await axios.post('/upload/up', fd, config)
 
       setImage(data)
+      image && console.log(image)
       // setUploading(false)
     } catch (error) {
       console.log(error)
@@ -59,7 +59,7 @@ function AddProduct() {
     fd.append('image', setImage(image.name))
     const newProduct = { nameProd, price, category, subCategory, description, image };
     dispatch(createProduct(newProduct));
-    dispatch(getAllProducts());
+    // dispatch(getAllProducts());
     closeModal();
   }
   // modal
@@ -134,7 +134,7 @@ function AddProduct() {
           </div>
         </Form>
       </Modal>
-      
+
     </div>
   );
 }

@@ -18,7 +18,7 @@ const ListProduct = () => {
   //useeffect
   useEffect(() => {
     dispatch(getAllProducts());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="home">

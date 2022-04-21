@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Button, Container, Form, FormControl, Nav, Navbar, NavDropdown, Offcanvas } from 'react-bootstrap'
+import { Button, Container, Form, FormControl, Nav, Navbar, Offcanvas } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux';
 import { getProfil, userLogOut } from '../../redux/actions/actionUser';
 import "./Dashboard.css";
@@ -72,9 +72,9 @@ const Dashboard = () => {
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                 <Nav.Link href="/">Home</Nav.Link>
-                                <Nav.Link href="#action2">Men</Nav.Link>
-                                <Nav.Link href="#action3">Women</Nav.Link>
-                                <Nav.Link href="#action4">Kids</Nav.Link>
+                                <Nav.Link href="/men">Men</Nav.Link>
+                                <Nav.Link href="/women">Women</Nav.Link>
+                                <Nav.Link href="/kids">Kids</Nav.Link>
                                 {/* <NavDropdown title="Dropdown" id="offcanvasNavbarDropdown">
                                     <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                                     <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>

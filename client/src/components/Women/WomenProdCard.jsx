@@ -13,8 +13,7 @@ import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import './Men.css';
-// import ShareIcon from '@mui/icons-material/Share';
+
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
