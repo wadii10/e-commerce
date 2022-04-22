@@ -14,7 +14,7 @@ export const productReducer = ( state = init , {type, payload} ) => {
             }
         case ADDPRODUCT_SUCCESS:
             return {
-                ...state, products:payload,loading:false
+                ...state, products:[...state.products, payload],loading:false
             }
         case ADDPRODUCT_FAIL:
             return {

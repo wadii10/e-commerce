@@ -70,8 +70,9 @@ export const getProfil = () => async(dispatch) => {
 
 export const userLogOut = () => {
 
-localStorage.removeItem('token');
-localStorage.removeItem('persist:authType');
+  localStorage.clear()
+// localStorage.removeItem('token');
+// localStorage.removeItem('persist:authType');
 document.location.href='/';
 
 return {

@@ -47,7 +47,7 @@ const ProductCard = ({ product }) => {
                         <UpdateProd updateProd={product} />
                         <Link to={`/detailProduct/${product._id}`}> <Button variant="info">DETAIL</Button> </Link>
                     </div> : <div className="btns_user">
-                        <Button variant="primary" onClick={()=>dispatch(addToCart(product._id,))} >BUY</Button>
+                        <Button variant="primary" onClick={()=>dispatch(addToCart(product._id,1))} >BUY</Button>
                         <Link to={`/detailProduct/${product._id}`}> <Button variant="info">DETAIL</Button> </Link>
                     </div> }
                 </Card.Body>
