@@ -8,3 +8,7 @@
 .productCard {
   margin-top: 0.2rem;
 }
+
+.like {
+  color: red;
+}

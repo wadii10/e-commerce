@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { IconButton } from "@mui/material";
 import {
     Card,
     Table
 } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ItemQty from "./ItemQty";
-// import Message from '../components/Message'
+import DeleteIcon from '@mui/icons-material/Delete';
+import { removeFromCart } from "../../redux/actions/actionCart";
 
 const CartScreen = () => {
 
@@ -33,7 +35,9 @@ const CartScreen = () => {
         });
 
         setTotal(total)
-    }, [total, cartItems])
+    }, [total, cartItems]);
+
+    const dispatch = useDispatch();
 
 
     return (
@@ -55,6 +59,7 @@ const CartScreen = () => {
                             <td>{el.nameProd}</td>
                             <td>{el.price}</td>
                             <td><ItemQty el={el} /></td>
+                            <td><IconButton onClick={() => dispatch(removeFromCart(el.product))}> <DeleteIcon /> </IconButton></td>
                         </tr>))
                     }
 

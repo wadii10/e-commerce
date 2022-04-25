@@ -34,6 +34,12 @@ export default function RecipeReviewCard({ man }) {
     setExpanded(!expanded);
   };
 
+  const [like, setLike] = React.useState(false);
+
+  const handleLike = () => {
+    setLike(!like);
+  }
+
   return (
     <div className='productCard'>
 
@@ -66,7 +72,7 @@ export default function RecipeReviewCard({ man }) {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+          <FavoriteIcon className={ like?'like' :'dislike'} onClick={handleLike} />
         </IconButton>
         
         {/* <IconButton aria-label="share">
