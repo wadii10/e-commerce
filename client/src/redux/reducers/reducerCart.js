@@ -1,14 +1,21 @@
-import { CARD_ADD_ITEM, CARD_REMOVE_ITEM } from "../actionTypes/actionTypesCart";
+import {
+  CARD_ADD_ITEM,
+  CARD_REMOVE_ITEM,
+  DECREMENT,
+  INCREMENT,
+} from "../actionTypes/actionTypesCart";
 
 const init = {
-    cartItems: []
-}
+  cartItems: [],
+};
 
-export const cartReducer = (state = init, {type, payload}) => {
+export const cartReducer = (state = init, { type, payload }) => {
   switch (type) {
     case CARD_ADD_ITEM:
       const item = payload;
-      const existItem = state.cartItems.find((el) => el.product === item.product);
+      const existItem = state.cartItems.find(
+        (el) => el.product === item.product
+      );
 
       if (existItem) {
         return {
@@ -27,6 +34,26 @@ export const cartReducer = (state = init, {type, payload}) => {
       return {
         ...state,
         cartItems: state.cartItems.filter((el) => el.product !== payload),
+      };
+
+    case INCREMENT:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter((el) =>
+          el.product === payload.product
+            ? { ...el, qty: (payload.qty += 1) }
+            : el
+        ),
+      };
+
+    case DECREMENT:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter((el) =>
+          el.product === payload.product
+            ? { ...el, qty: (payload.qty -= 1) }
+            : el
+        ),
       };
     default:
       return state;
